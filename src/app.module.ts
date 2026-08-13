@@ -2,11 +2,12 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CartsModule } from './carts/carts.module';
+import { AuthModule } from './auth/auth.module';
+import { OrdersResourceModule } from './features/orders-resource/orders-resource.module';
 import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
-  imports: [CartsModule, ReviewsModule],
-
+  imports: [AuthModule, OrdersResourceModule, CartsModule, ReviewsModule],
   controllers: [AppController],
   providers: [AppService],
 })
